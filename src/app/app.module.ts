@@ -19,6 +19,7 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { InputComponent } from './shared/input/input.component';
+import { RadioComponent } from './shared/radio/radio.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InputComponent } from './shared/input/input.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent
+    InputComponent,
+    RadioComponent
   ],
   imports: [
     BrowserModule,
