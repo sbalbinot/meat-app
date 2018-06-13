@@ -1,5 +1,5 @@
-import { MenuItem } from "../menu-item/menu-item.model";
-import { CartItem } from "./cart-item.model";
+import { MenuItem } from "../restaurant-detail/menu-item/menu-item.model";
+import { CartItem } from "../restaurant-detail/shopping-cart/cart-item.model";
 
 export class ShoppingCartService {
     items: CartItem[] = []
