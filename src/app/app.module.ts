@@ -1,5 +1,5 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderComponent } from './order/order.component';
 import { OrderService } from './order/order.service';
@@ -22,8 +24,6 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
-import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
-import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { RatingComponent } from './shared/rating/rating.component';
 
 @NgModule({
@@ -50,8 +50,9 @@ import { RatingComponent } from './shared/rating/rating.component';
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [RestaurantsService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
