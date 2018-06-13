@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
+import { PATTERNS } from '../shared/constant/patterns';
 import { RadioOption } from '../shared/radio/radio-option.model';
 import { Order, OrderItem } from './order.model';
 import { OrderService } from './order.service';
@@ -26,13 +27,13 @@ export class OrderComponent implements OnInit {
 
   ngOnInit() {
     this.orderForm = this.fb.group({
-      name: this.fb.control(''),
-      email: this.fb.control(''),
-      emailConfirmation: this.fb.control(''),
-      address: this.fb.control(''),
-      number: this.fb.control(''),
+      name: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      email: this.fb.control('', [Validators.required, Validators.pattern(PATTERNS.email)]),
+      emailConfirmation: this.fb.control('', [Validators.required, Validators.pattern(PATTERNS.email)]),
+      address: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      number: this.fb.control('', [Validators.required, Validators.pattern(PATTERNS.number)]),
       optionalAddress: this.fb.control(''),
-      paymentOption: this.fb.control('')
+      paymentOption: this.fb.control('', [Validators.required])
     })
   }
 
