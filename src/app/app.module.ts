@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderComponent } from './order/order.component';
+import { OrderService } from './order/order.service';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -20,7 +22,6 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { InputComponent } from './shared/input/input.component';
 import { RadioComponent } from './shared/radio/radio.component';
-import { OrderItemsComponent } from './order/order-items/order-items.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { OrderItemsComponent } from './order/order-items/order-items.component';
     RouterModule.forRoot(ROUTES),
     FormsModule
   ],
-  providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RestaurantsService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

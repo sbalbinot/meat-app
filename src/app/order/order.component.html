@@ -5,8 +5,7 @@
 <section class="content">
   <section class="invoice">
 
-    {{form.valid}}
-    {{form.value | json}}
+    {{form.valid}} {{form.value | json}}
 
     <form #form="ngForm" novalidate>
       <div class="row">
@@ -28,12 +27,12 @@
         </div>
         <div class="col-sm-3 col-xs-6">
           <mt-input-container errorMessage="Obrigatório e somente números" label="Número">
-              <input type="text" class="form-control" name="number" required ngModel placeholder="Número" pattern="^[0-9]*$" autocomplete="off">
+            <input type="text" class="form-control" name="number" required ngModel placeholder="Número" pattern="^[0-9]*$" autocomplete="off">
           </mt-input-container>
         </div>
         <div class="col-sm-3 col-xs-6">
           <mt-input-container>
-              <input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
+            <input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
           </mt-input-container>
         </div>
         <!-- /.col -->
@@ -45,7 +44,7 @@
         <div class="col-xs-12">
           <p class="lead">Itens do Pedido:</p>
         </div>
-        <mt-order-items></mt-order-items>
+        <mt-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (remove)="remove($event)"></mt-order-items>
         <!-- /.col -->
       </div>
       <!-- /.row -->
