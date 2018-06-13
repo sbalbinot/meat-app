@@ -370,5 +370,23 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Rua Pontes",
+      "number": "1243",
+      "optionalAddress": "201",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 3,
+          "menuId": "zlasagna"
+        },
+        {
+          "quantity": 3,
+          "menuId": "greensandwich"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }
