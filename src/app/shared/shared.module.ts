@@ -12,7 +12,7 @@ import { RatingComponent } from "./rating/rating.component";
 
 @NgModule({
     declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent],
-    imports: [CommonModule, FormsModule, ReactiveFormsModule],
+    imports: [CommonModule,FormsModule, ReactiveFormsModule],
     exports: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent, CommonModule, FormsModule, ReactiveFormsModule]
 })
 export class SharedModule {
