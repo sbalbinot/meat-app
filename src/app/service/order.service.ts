@@ -3,9 +3,9 @@ import { Headers, Http, RequestOptions } from "@angular/http";
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { MEAT_API } from "../app.api";
+import { Order } from "../order/order.model";
 import { CartItem } from "../restaurant-detail/shopping-cart/cart-item.model";
-import { ShoppingCartService } from "../restaurant-detail/shopping-cart/shopping-cart.service";
-import { Order } from "./order.model";
+import { ShoppingCartService } from "./shopping-cart.service";
 
 @Injectable()
 export class OrderService {

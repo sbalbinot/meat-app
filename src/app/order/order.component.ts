@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
+import { OrderService } from '../service/order.service';
+import { PATTERNS } from '../shared/constant/patterns';
 import { RadioOption } from '../shared/radio/radio-option.model';
+import { compare } from '../shared/validator/validator';
 import { Order, OrderItem } from './order.model';
-import { OrderService } from './order.service';
 
 @Component({
   selector: 'mt-order',
@@ -26,15 +28,28 @@ export class OrderComponent implements OnInit {
 
   ngOnInit() {
     this.orderForm = this.fb.group({
-      name: this.fb.control(''),
-      email: this.fb.control(''),
-      emailConfirmation: this.fb.control(''),
-      address: this.fb.control(''),
-      number: this.fb.control(''),
+      name: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      email: this.fb.control('', [Validators.required, Validators.pattern(PATTERNS.email)]),
+      emailConfirmation: this.fb.control('', [Validators.required, Validators.pattern(PATTERNS.email)]),
+      address: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      number: this.fb.control('', [Validators.required, Validators.pattern(PATTERNS.number)]),
       optionalAddress: this.fb.control(''),
-      paymentOption: this.fb.control('')
-    })
+      paymentOption: this.fb.control('', [Validators.required])
+    }, {validator: compare('email', 'emailConfirmation')}) // função de comparar no arquivo /shared/validators.ts... alternativa dinâmica para o método 'equalsTo'
+       /* {validator: OrderComponent.equalsTo} */
   }
+
+  /* static equalsTo(group: AbstractControl): {[key: string]: boolean} {
+    const email = group.get('email')
+    const emailConfirmation = group.get('emailConfirmation')
+    if (!email || !emailConfirmation) {
+      return undefined
+    }
+    if (email.value !== emailConfirmation.value) {
+      return {emailsNotMatch: true}
+    }
+    return undefined
+  } */
 
   itemsValue(): number {
     return this.orderService.itemsValue()

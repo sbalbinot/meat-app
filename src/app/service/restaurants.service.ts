@@ -7,7 +7,7 @@ import { MEAT_API } from "../app.api";
 import { ErrorHandler } from "../app.error-handler";
 import { MenuItem } from "../restaurant-detail/menu-item/menu-item.model";
 import { Review } from "../restaurant-detail/reviews/review.model";
-import { Restaurant } from "./restaurant/restaurant.model";
+import { Restaurant } from "../restaurants/restaurant/restaurant.model";
 
 @Injectable()
 export class RestaurantsService {
