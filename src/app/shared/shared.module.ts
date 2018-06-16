@@ -1,10 +1,10 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { OrderService } from "../order/order.service";
+import { ShoppingCartService } from "../restaurant-detail/shopping-cart/shopping-cart.service";
+import { RestaurantsService } from "../restaurants/restaurants.service";
 import { LoginService } from "../security/login/login.service";
-import { OrderService } from "../service/order.service";
-import { RestaurantsService } from "../service/restaurants.service";
-import { ShoppingCartService } from "../service/shopping-cart.service";
 import { InputComponent } from "./input/input.component";
 import { NotificationService } from "./messages/notification.service";
 import { SnackbarComponent } from "./messages/snackbar/snackbar.component";

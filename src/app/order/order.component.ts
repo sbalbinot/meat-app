@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
-import { OrderService } from '../service/order.service';
 import { RadioOption } from '../shared/radio/radio-option.model';
 import { PATTERNS } from '../shared/validator/constants/patterns';
 import { compare } from '../shared/validator/validator';
 import { Order, OrderItem } from './order.model';
+import { OrderService } from './order.service';
 
 @Component({
   selector: 'mt-order',
@@ -35,8 +35,7 @@ export class OrderComponent implements OnInit {
       number: this.fb.control('', [Validators.required, Validators.pattern(PATTERNS.number)]),
       optionalAddress: this.fb.control(''),
       paymentOption: this.fb.control('', [Validators.required])
-    }, {validator: compare('email', 'emailConfirmation')}) // função de comparar no arquivo /shared/validators.ts
-       /* {validator: OrderComponent.equalsTo} */
+    }, {validator: compare('email', 'emailConfirmation')}) // função de comparar dois valores --> /shared/validators.ts
   }
 
   itemsValue(): number {
