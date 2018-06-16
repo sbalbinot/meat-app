@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { LoginService } from "../security/login/login.service";
 import { OrderService } from "../service/order.service";
 import { RestaurantsService } from "../service/restaurants.service";
 import { ShoppingCartService } from "../service/shopping-cart.service";
@@ -19,7 +20,7 @@ export class SharedModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: SharedModule,
-            providers: [ShoppingCartService, RestaurantsService, OrderService, NotificationService]
+            providers: [ShoppingCartService, RestaurantsService, OrderService, NotificationService, LoginService]
         }
     }
 }
