@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 import { MEAT_API } from "../app.api";
 import { Order } from "../order/order.model";
 import { CartItem } from "../restaurant-detail/shopping-cart/cart-item.model";
