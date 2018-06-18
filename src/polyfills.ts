@@ -15,8 +15,8 @@ import 'core-js/es6/set';
 import 'core-js/es6/string';
 import 'core-js/es6/symbol';
 import 'core-js/es7/reflect';
-import 'intl';
-import 'intl/locale-data/jsonp/pt-BR.js';
+//import 'intl';
+//import 'intl/locale-data/jsonp/pt-BR.js';
 import 'web-animations-js/web-animations.min.js';
 import 'zone.js/dist/zone';
 
