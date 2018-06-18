@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { MEAT_API } from "../app.api";
 import { MenuItem } from "../restaurant-detail/menu-item/menu-item.model";
 import { Review } from "../restaurant-detail/reviews/review.model";
